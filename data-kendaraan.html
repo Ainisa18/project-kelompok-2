@@ -11,7 +11,17 @@
   <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
+
+<style>
+  .calendar-link {
+    font-size: 40px; 
+    margin-top: 3px;
+    margin-left: 20px;
+  }
+</style>
+
 <body class="hold-transition sidebar-mini">
 <!-- Site wrapper -->
 <div class="wrapper">
@@ -255,6 +265,7 @@
               <label class="form-check-label">Mobil</label>
             </div>
           </div>
+
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="index.html">Home</a></li>
@@ -265,9 +276,21 @@
       </div><!-- /.container-fluid -->
     </section>
 
+    <div class="row mb-2">
+      <div class="col-sm-6">
+        <div class="calendar-link">
+          <a href="#">
+            <i class="far fa-calendar-alt"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
     <!-- Main content -->
-    <section class="content">
-      <table class="table">
+    <div class="row">
+      <div class="col-sm-12">
+        <section class="content">
+          <table class="table">
         <thead>
           <tr>
             <th scope="col">No</th>
@@ -281,43 +304,59 @@
         <tbody>
           <tr>
             <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
+            <td>B3719 KFJ</td>
+            <td>Honda Beat</td>
+            <td>Kafi</td>
+            <td>Mahasiswa</td>
+            <td>
+                <a href="#">Edit</a> | 
+                <a href="#">Hapus</a>
+            </td>
+            </tr>
+            
           </tr>
           <tr>
             <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-          </tr>
+            <td>B1822 NFB</td>
+            <td>Honda Vario</td>
+            <td>Ainisa</td>
+            <td>Dosen</td>
+            <td>
+              <a href="#">Edit</a> | 
+              <a href="#">Hapus</a>
+          </td>
           <tr>
             <th scope="row">3</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
+            <td>B8312 GCH</td>
+            <td>Yamaha NMAX</td>
+            <td>Ades</td>
+            <td>Dosen</td>
+            <td>
+              <a href="#">Edit</a> | 
+              <a href="#">Hapus</a>
+          </td>
           </tr>
           <tr>
             <th scope="row">4</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
+            <td>B9514 HYS</td>
+            <td>Honda Beat</td>
+            <td>Ade</td>
+            <td>Mahasiswa</td>
+            <td>
+              <a href="#">Edit</a> | 
+              <a href="#">Hapus</a>
+          </td>
           </tr>
           <tr>
             <th scope="row">5</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
+            <td>B7362 NSM</td>
+            <td>Honda Supra</td>
+            <td>Budiman</td>
+            <td>Dosen</td>
+            <td>
+              <a href="#">Edit</a> | 
+              <a href="#">Hapus</a>
+          </td>
           </tr>
         </tbody>
       </table>
