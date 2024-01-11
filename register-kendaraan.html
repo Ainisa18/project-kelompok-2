@@ -56,7 +56,7 @@
       <div class="card-body register-card-body">
         <p class="login-box-msg">Registrasi Kendaraan Anda</p>
 
-        <form id="" method="post">
+        <form id="form" method="post">
           <div class="mb-3">
             <label>Status</label>
             <div class="form-check form-check-inline">
@@ -67,6 +67,32 @@
               <input class="form-check-input" type="radio" name="status" value="mahasiswa_dosen">
               <label class="form-check-label">Dosen</label>
             </div>
+          </div>
+
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="NIM/NIDN" id="nim">
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-id-card"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Nama Lengkap" id="nama">
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-user"></span>
+              </div>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label >Prodi</label>
+            <select class="form-control" id="prodi">
+              <option>Teknik Informatika</option>
+              <option>Sistem Informasi</option>
+              <option>Bisnis Digital</option>
+            </select>
           </div>
 
           <div class="mb-3">
@@ -82,33 +108,7 @@
           </div>
 
           <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="NIM/NIDN">
-            <div class="input-group-append">
-              <div class="input-group-text">
-                <span class="fas fa-id-card"></span>
-              </div>
-            </div>
-          </div>
-
-          <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Nama Lengkap">
-            <div class="input-group-append">
-              <div class="input-group-text">
-                <span class="fas fa-user"></span>
-              </div>
-            </div>
-          </div>
-          <div class="mb-3">
-            <label >Prodi</label>
-            <select class="form-control">
-              <option>Teknik Informatika</option>
-              <option>Sistem Informasi</option>
-              <option>Bisnis Digital</option>
-            </select>
-          </div>
-
-          <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="No Pol">
+            <input type="text" class="form-control" placeholder="No Pol" id="nomor">
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-car"></span>
@@ -117,7 +117,7 @@
           </div>
 
           <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Merk">
+            <input type="text" class="form-control" placeholder="Merk" id="merk">
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-car"></span>
@@ -149,7 +149,7 @@
             </div>
             <!-- /.col -->
             <div class="col-4">
-              <button type="submit" class="btn btn-primary btn-block">Daftar</button>
+              <button type="submit" class="btn btn-primary btn-block" onclick="daftar_kendaraan()">Daftar</button>
             </div>
           </div>
         </form>
@@ -172,5 +172,6 @@
   <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
   <!-- AdminLTE App -->
   <script src="dist/js/adminlte.min.js"></script>
+  <script src="dist/js/registrasi_kendaraan.js"></script>
 </body>
 </html>
