@@ -1,4 +1,4 @@
-function daftar_kendaraaan() {
+function daftar_kendaraan() {
     let nim = document.getElementById("nim").value;
     let nimregex = /^\d{10,}$/;
     if (!nimregex.test(nim)) {
