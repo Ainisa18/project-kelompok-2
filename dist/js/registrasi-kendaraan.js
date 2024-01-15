@@ -15,7 +15,7 @@ function daftar_kendaraan() {
     let nopol = document.getElementById("nomor").value;
     let nopolregex = /^[a-zA-Z0-9]+$/;
     if (!nopolregex.test(nopol)) {
-        alert('Nomor polisi harus mengandung huruf dan angka');
+        alert('Nomor polisi harus mengandung huruf dan angka serta tidak boleh ada spasi');
         return false;
     }
 

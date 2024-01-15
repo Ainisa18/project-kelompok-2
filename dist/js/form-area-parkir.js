@@ -5,7 +5,7 @@ function data_parkir() {
         return false;
     }
     let kapasitas = document.getElementById("kapasitas").value;
-    let kapasitasregex = /^\d{10,}$/;
+    let kapasitasregex = /^\d{0,}$/;
     if (!kapasitasregex.test(kapasitas)) {
         alert('Kapasitas harus berupa angka');
         return false;
