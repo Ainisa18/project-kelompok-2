@@ -5,7 +5,7 @@ function daftar_user(){
         return false;
     }
     let asal_prodi = document.getElementById("prodi").value;
-    if (asal_prodi === "teknik informatika" === "sistem informasi" === "bisnis digital") {
+    if (asal_prodi !== "teknik informatika" && asal_prodi !== "sistem informasi" && asal_prodi !== "bisnis digital") {
         alert('Prodi tidak ada di STT Terpadu Nurul Fikri');
         return false;
     }
@@ -20,11 +20,13 @@ function daftar_user(){
         alert('Password harus mengandung angka');
         return false;
     }
+    let password_sebelumnya = password
     let cek_password = document.getElementById("cek").value;
-    if (cek_password === password) {
+    if (cek_password !== password_sebelumnya) {
         alert('Password tidak sesuai');
         return false;
     }
 
     window.alert("Berhasil Mendaftar");
+    document.getElementById("form").action = "login.html";
 }

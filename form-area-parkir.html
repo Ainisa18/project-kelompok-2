@@ -300,7 +300,7 @@
           <div class="register-logo">
             <a href="#"><b>Form Area Parkir</b></a>
           </div>
-          <form id="form" method="post">
+          <form id="form" method="post" onsubmit="data_parkir()">
             <div class="form-group">
               <label for="gedung">Gedung:</label>
               <select class="form-control" id="gedung" name="gedung">
@@ -322,7 +322,7 @@
               <input type="text" class="form-control" placeholder="Kapasitas" id="kapasitas">
             </div>
 
-            <button type="submit" class="btn btn-success float-right" onclick="data_parkir()">Simpan</button>
+            <button type="submit" class="btn btn-success float-right">Simpan</button>
           </form>
 
       </section>

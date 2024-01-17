@@ -26,4 +26,5 @@ function daftar_kendaraan() {
     }
 
     window.alert("Berhasil Mendaftar");
+    document.getElementById("form").action = "data-kendaraan.html";
 }

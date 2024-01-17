@@ -71,7 +71,7 @@
 
                 <p class="login-box-msg">Register</p>
 
-                <form id="form" method="post">
+                <form id="form" method="post" onsubmit="daftar_user()">
                     <div class="input-group mb-3">
                         <input type="text" class="form-control" placeholder="Nama Lengkap" id="nama">
                         <div class="input-group-append">
@@ -115,7 +115,7 @@
                     <div class="row">
                         <div class="col-8">
                             <div class="icheck-primary">
-                                <input type="checkbox" id="agreeTerms" name="terms" value="agree">
+                                <input type="checkbox" id="agreeTerms" name="terms" value="agree" required>
                                 <label for="agreeTerms">
                                     I agree to the <a href="#">terms</a>
                                 </label>
@@ -123,8 +123,7 @@
                         </div>
                         <!-- /.col -->
                         <div class="col-4">
-                            <button type="submit" class="btn btn-success btn-block"
-                                onclick="daftar_user()">Daftar</button>
+                            <button type="submit" class="btn btn-success btn-block">Daftar</button>
                         </div>
                         <!-- /.col -->
                     </div>

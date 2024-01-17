@@ -12,4 +12,5 @@ function data_parkir() {
     }
 
     window.alert("Berhasil Submit");
+    document.getElementById("form").action = "data-area-parkir.html";
 }
