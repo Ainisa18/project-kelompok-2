@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminLTE 3 | Blank Page</title>
+  <title>AdminLTE 3 | Form Area Parkir</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet"
@@ -300,7 +300,7 @@
           <div class="register-logo">
             <a href="#"><b>Form Area Parkir</b></a>
           </div>
-          <form id="form" method="post" onsubmit="data_parkir()">
+          <form id="form" method="post">
             <div class="form-group">
               <label for="gedung">Gedung:</label>
               <select class="form-control" id="gedung" name="gedung">
@@ -322,7 +322,7 @@
               <input type="text" class="form-control" placeholder="Kapasitas" id="kapasitas">
             </div>
 
-            <button type="submit" class="btn btn-success float-right">Simpan</button>
+            <button type="submit" class="btn btn-success float-right" onclick="data_parkir()">Simpan</button>
           </form>
 
       </section>
@@ -344,7 +344,25 @@
     <!-- /.control-sidebar -->
   </div>
   <!-- ./wrapper -->
-
+  <!-- JS Form Data Parkir -->
+  <script>
+    function data_parkir() {
+    let area = document.getElementById("nama_area").value;
+    if (area.length === 0 || area.length > 30) {
+        alert('Nama area harus diisi dan maksimum 30 karakter');
+        return false;
+    }
+    let kapasitas = document.getElementById("kapasitas").value;
+    let kapasitasregex = /^\d{0,}$/;
+    if (!kapasitasregex.test(kapasitas)) {
+        alert('Kapasitas harus berupa angka');
+        return false;
+    }
+    if(area && kapasitas)
+    document.getElementById("form").action = "data-area-parkir.html";
+    window.alert("Berhasil Submit");
+}
+  </script>
   <!-- jQuery -->
   <script src="plugins/jquery/jquery.min.js"></script>
   <!-- Bootstrap 4 -->
@@ -353,7 +371,6 @@
   <script src="dist/js/adminlte.min.js"></script>
   <!-- AdminLTE for demo purposes -->
   <script src="dist/js/demo.js"></script>
-  <script src="dist/js/form-area-parkir.js"></script>
 </body>
 
 </html>
