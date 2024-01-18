@@ -310,7 +310,7 @@
               <th scope="col">Action</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody id="list_kendaraan">
             <tr>
               <th scope="row">1</th>
               <td>B3719 KFJ</td>
@@ -318,8 +318,7 @@
               <td>Kafi</td>
               <td>Mahasiswa</td>
               <td>
-                <a href="#">Edit</a> |
-                <a href="#">Hapus</a>
+                <button>Edit</button>
               </td>
             </tr>
             <tr>
@@ -329,8 +328,7 @@
               <td>Ainisa</td>
               <td>Dosen</td>
               <td>
-                <a href="#">Edit</a> |
-                <a href="#">Hapus</a>
+                <button>Edit</button>
               </td>
             </tr>
             <tr>
@@ -340,8 +338,7 @@
               <td>Ades</td>
               <td>Dosen</td>
               <td>
-                <a href="#">Edit</a> |
-                <a href="#">Hapus</a>
+                <button>Edit</button>
               </td>
             </tr>
             <tr>
@@ -351,8 +348,7 @@
               <td>Ade</td>
               <td>Mahasiswa</td>
               <td>
-                <a href="#">Edit</a> |
-                <a href="#">Hapus</a>
+                <button>Edit</button>
               </td>
             </tr>
             <tr>
@@ -362,8 +358,7 @@
               <td>Budiman</td>
               <td>Dosen</td>
               <td>
-                <a href="#">Edit</a> |
-                <a href="#">Hapus</a>
+                <button>Edit</button>
               </td>
             </tr>
           </tbody>
@@ -389,6 +384,91 @@
   </div>
   <!-- ./wrapper -->
 
+  <!-- Edit Data Kendaraan -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Data contoh
+      const KendaraanData = [
+        { no: '1', nopol: 'B3719 KFJ', merek: 'Honda Beat', pemilik: 'Kafi', status: 'Mahasiswa', },
+        { no: '2', nopol: 'B1822 NFB', merek: 'Honda Vario', pemilik: 'Ainisa', status: 'Dosen', },
+        { no: '3', nopol: 'B8312 GCH', merek: 'Yamaha NMAX', pemilik: 'Ades', status: 'Dosen', },
+        { no: '4', nopol: 'B9514 HYS', merek: 'Honda Beat', pemilik: 'Ade', status: 'Mahasiswa', },
+        { no: '5', nopol: 'B7362 NSM', merek: 'Honda Supra', pemilik: 'Budiman', status: 'Dosen', },
+      ];
+
+      // Fungsi untuk membuat baris tabel
+      function generateTableRow(kendaraan) {
+        const row = document.createElement('tr');
+
+        // No
+        const no = document.createElement('td');
+        no.textContent = kendaraan.no;
+        row.appendChild(no);
+        
+        // Nopol
+        const nopol = document.createElement('td');
+        nopol.textContent = kendaraan.nopol;
+        row.appendChild(nopol);
+
+        // Merek
+        const merek = document.createElement('td');
+        merek.textContent = kendaraan.merek;
+        row.appendChild(merek);
+
+        // Pemilik
+        const pemilik = document.createElement('td');
+        pemilik.textContent = kendaraan.pemilik;
+        row.appendChild(pemilik);
+
+        // Status
+        const status = document.createElement('td');
+        status.textContent = kendaraan.status;
+        row.appendChild(status);
+
+        // Action
+        const action = document.createElement('td');
+        const editButton = document.createElement('button');
+        editButton.textContent = 'Edit';
+        editButton.addEventListener('click', function () {
+          editKendaraan(kendaraan);
+        });
+        action.appendChild(editButton);
+        row.appendChild(action);
+
+        return row;
+      }
+
+      // Fungsi untuk mengedit data kendaraan
+      function editKendaraan(kendaraan) {
+        const newNopol = prompt('Masukkan nopol baru:', kendaraan.nopol);
+        const newMerek = prompt('Masukkan merek baru:', kendaraan.merek);
+        const newPemilik = prompt('Masukkan pemilik baru:', kendaraan.pemilik);
+        const newStatus = prompt('Masukkan status baru:', kendaraan.status);
+
+        // Memperbarui data
+        kendaraan.nopol = newNopol;
+        kendaraan.merek = newMerek;
+        kendaraan.pemilik = newPemilik;
+        kendaraan.status = newStatus;
+
+        // Merender ulang tabel
+        renderKendaraan();
+      }
+
+      // Fungsi untuk merender data kendaraan dalam tabel
+      function renderKendaraan() {
+        const list_kendaraan = document.getElementById('list_kendaraan');
+        list_kendaraan.innerHTML = '';
+
+        KendaraanData.forEach((kendaraan) => {
+          const row = generateTableRow(kendaraan);
+          list_kendaraan.appendChild(row);
+        });
+      }
+
+      renderKendaraan();
+    });
+  </script>
   <!-- jQuery -->
   <script src="plugins/jquery/jquery.min.js"></script>
   <!-- Bootstrap 4 -->

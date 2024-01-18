@@ -299,15 +299,14 @@
               <th scope="col">Action</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody id="List_Parkir">
             <tr>
               <th scope="row">1</th>
               <td>Area Depan B2</td>
               <td>100</td>
               <td>Kampus B2 STT-NF</td>
               <td>
-                <a href="#">Edit</a> |
-                <a href="#">Hapus</a>
+                <button>Edit</button>
               </td>
             </tr>
             <tr>
@@ -316,8 +315,7 @@
               <td>40</td>
               <td>Kampus B2 STT-NF</td>
               <td>
-                <a href="#">Edit</a> |
-                <a href="#">Hapus</a>
+                <button>Edit</button>
               </td>
             </tr>
             <tr>
@@ -326,8 +324,7 @@
               <td>80</td>
               <td>Kampus B1 STT-NF</td>
               <td>
-                <a href="#">Edit</a> |
-                <a href="#">Hapus</a>
+                <button>Edit</button>
               </td>
             </tr>
             <tr>
@@ -336,8 +333,7 @@
               <td>50</td>
               <td>Kampus B3 STT-NF</td>
               <td>
-                <a href="#">Edit</a> |
-                <a href="#">Hapus</a>
+                <button>Edit</button>
               </td>
             </tr>
             <tr>
@@ -346,8 +342,7 @@
               <td>20</td>
               <td>Kampus B2 STT-NF</td>
               <td>
-                <a href="#">Edit</a> |
-                <a href="#">Hapus</a>
+                <button>Edit</button>
               </td>
             </tr>
           </tbody>
@@ -372,6 +367,84 @@
   </div>
   <!-- ./wrapper -->
 
+  <!-- Edit Data Area Parkir -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Data contoh
+      const ParkirData = [
+        { no: '1', NamaArea: 'Area Depan B2', Kapasitas: '100', Gedung: 'Kampus B2 STT-NF', },
+        { no: '2', NamaArea: 'Area Belakang B2', Kapasitas: '40', Gedung: 'Kampus B2 STT-NF', },
+        { no: '3', NamaArea: 'Area Depan B1', Kapasitas: '80', Gedung: 'Kampus B1 STT-NF', },
+        { no: '4', NamaArea: 'Area Depan B3', Kapasitas: '50', Gedung: 'Kampus B3 STT-NF', },
+        { no: '5', NamaArea: 'Area Depan Musholla', Kapasitas: '20', Gedung: 'Kampus B2 STT-NF', },
+      ];
+
+      // Fungsi untuk membuat baris tabel
+      function generateTableRow(parkir) {
+        const row = document.createElement('tr');
+
+        // No
+        const no = document.createElement('td');
+        no.textContent = parkir.no;
+        row.appendChild(no);
+        
+        // Nama Area
+        const NamaArea = document.createElement('td');
+        NamaArea.textContent = parkir.NamaArea;
+        row.appendChild(NamaArea);
+
+        // Kapasitas
+        const Kapasitas = document.createElement('td');
+        Kapasitas.textContent = parkir.Kapasitas;
+        row.appendChild(Kapasitas);
+
+        // Gedung
+        const Gedung = document.createElement('td');
+        Gedung.textContent = parkir.Gedung;
+        row.appendChild(Gedung);
+
+        // Action
+        const action = document.createElement('td');
+        const editButton = document.createElement('button');
+        editButton.textContent = 'Edit';
+        editButton.addEventListener('click', function () {
+          editParkir(parkir);
+        });
+        action.appendChild(editButton);
+        row.appendChild(action);
+
+        return row;
+      }
+
+      // Fungsi untuk mengedit data area parkir
+      function editParkir(parkir) {
+        const newNamaArea = prompt('Masukkan nama area baru:', parkir.NamaArea);
+        const newKapasitas = prompt('Masukkan kapasitas baru:', parkir.Kapasitas);
+        const newGedung = prompt('Masukkan gedung baru:', parkir.Gedung);
+
+        // Memperbarui data
+        parkir.NamaArea = newNamaArea;
+        parkir.Kapasitas = newKapasitas;
+        parkir.Gedung = newGedung;
+
+        // Merender ulang tabel
+        renderParkir();
+      }
+
+      // Fungsi untuk merender data area parkir dalam tabel
+      function renderParkir() {
+        const List_Parkir = document.getElementById('List_Parkir');
+        List_Parkir.innerHTML = '';
+
+        ParkirData.forEach((parkir) => {
+          const row = generateTableRow(parkir);
+          List_Parkir.appendChild(row);
+        });
+      }
+
+      renderParkir();
+    });
+  </script>
   <!-- jQuery -->
   <script src="plugins/jquery/jquery.min.js"></script>
   <!-- Bootstrap 4 -->
